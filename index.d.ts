@@ -1,15 +1,15 @@
 interface stringToObjConfig {
-  trim: Boolean;
-  delimiters: {
-    values: { [key: string]: any },
-    blackhole: string | Boolean,
+  trim?: Boolean;
+  delimiters?: {
+    values?: { [key: string]: any },
+    blackhole?: string | Boolean,
   };
 }
 
 declare module 'string-to-obj' {
 
   class stringToObj {
-    constructor(config: stringToObjConfig);
+    constructor(config?: stringToObjConfig);
   }
 
   namespace stringToObj {
