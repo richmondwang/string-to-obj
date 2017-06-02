@@ -1,45 +1,37 @@
-/**
- * Created by richmond on 2017/05/31.
- */
-
 (function (root, factory) {
     /* istanbul ignore next */
     if(typeof define === "function" && define.amd) {
-        define(function(){
-            return (root.strToObj = factory);
-        });
+        define(['lodash'], factory);
     } else if(typeof module === "object" && module.exports) {
-        module.exports = (root.strToObj = factory);
+        module.exports = factory(require('lodash'));
     } else {
-        root.strToObj = factory;
+        root.stringToObj = factory(root._);
     }
-}(this, function(config) {
-    var _ = require('lodash');
-    function customizer(objValue, srcValue) {
-        return _.isUndefined(objValue) ? srcValue : objValue;
-    }
-    var defaults = _.partialRight(_.assignInWith, customizer);
-    var defaultConfig = {
-        trim: true,
-        delimiters: {
-            values: {
-                default: ','
+}(this, function(_) {
+    function StringToObj(config) {
+        function customizer(objValue, srcValue) {
+            return _.isUndefined(objValue) ? srcValue : objValue;
+        }
+        var defaults = _.partialRight(_.assignInWith, customizer);
+        var defaultConfig = {
+            trim: true,
+            delimiters: {
+                values: {
+                    default: ','
+                },
+                keyValue: ':'
             },
-            keyValue: ':'
-        },
-        blackhole: 'context'
-    };
+            blackhole: 'context'
+        };
 
-    // assign default config
-    if (config === undefined) {
-        config = defaultConfig;
-    } else {
-        config = defaults(config, defaultConfig);
-    }
+        // assign default config
+        if (config === undefined) {
+            config = defaultConfig;
+        } else {
+            config = defaults(config, defaultConfig);
+        }
 
-    return {
-        parse: function (str) {
-
+        this.parse = function (str) {
             // escape dangerous characters
             var d = config.delimiters.keyValue.replace(/[^\w\s]/g, "\\$&"),
             // this regex will split objects by space
@@ -71,9 +63,13 @@
                 result[filter] = result[filter].concat(newSet);
             }
             return result;
-        },
-        source: function (config) {
+        }
+        
+        this.source = function (config) {
             return config;
         }(config)
     }
-}));
+
+    return StringToObj;
+
+}))

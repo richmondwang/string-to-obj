@@ -1,24 +1,20 @@
-interface stringToObjConfig {
-  trim?: Boolean;
-  delimiters?: {
-    values?: { [key: string]: any },
-    keyValue?: string,
-  };
-  blackhole?: string | Boolean,
+declare class StringToObj {
+  constructor(config?: StringToObj.Config);
+
+  parse(input: string): { [key: string]: string[] };
+  source: StringToObj.Config;
 }
 
-declare module 'string-to-obj' {
-
-  class stringToObj {
-    constructor(config?: stringToObjConfig);
+declare namespace StringToObj {
+  interface Config {
+    trim?: Boolean;
+    delimiters?: {
+      values?: { [key: string]: any },
+      keyValue?: string,
+    };
+    blackhole?: string | Boolean,
   }
-
-  namespace stringToObj {
-    function parse(input: string): { [key: string]: string[] };
-    const source: stringToObjConfig;
-  }
-
-  export = stringToObj;
-
 }
 
+export = StringToObj;
+export as namespace StringToObj;
