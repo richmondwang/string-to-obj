@@ -14,7 +14,7 @@ This module takes a string of key-value/value and transforms it to an object.
 ```js
 const strToObject = require('str-to-obj');
 
-config = {
+const parser = new strToObject({
     trim: true,
     delimiters: {
         values: {
@@ -23,9 +23,7 @@ config = {
         keyValue: ':'
     },
     blackhole: 'context'
-};
-
-const parser = new strToObject(config);
+});
 console.log(parser.parse('tags:"db backup,systems" is:open is:active authors:johndoe,janedoe application crashes'));
 
 /* Outputs:
@@ -36,6 +34,18 @@ console.log(parser.parse('tags:"db backup,systems" is:open is:active authors:joh
   context: ['application', 'crashes']
 }
 */
+
+// if you are using `key=value` format:
+
+const parser = new strToObject({
+    delimiters: {
+        keyValue: '='
+    },
+    blackhole: 'context'
+});
+console.log(parser.parse('tags="db backup,systems" is=open is=active authors=johndoe,janedoe application crashes'));
+
+// will still output the same...
 ```
 
 *No npm package yet! This project is still in progress of creating tests.*
