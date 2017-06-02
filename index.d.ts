@@ -2,8 +2,9 @@ interface stringToObjConfig {
   trim?: Boolean;
   delimiters?: {
     values?: { [key: string]: any },
-    blackhole?: string | Boolean,
+    keyValue?: string,
   };
+  blackhole?: string | Boolean,
 }
 
 declare module 'string-to-obj' {
