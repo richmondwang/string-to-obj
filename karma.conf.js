@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '.',
+    basePath: './',
 
 
     // frameworks to use
@@ -15,9 +15,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      { pattern: 'index.js', included: false },
+      { pattern: 'index.test.js', included: false },
+      { pattern: 'node_modules/chai/chai.js', included: false },
+      { pattern: 'node_modules/lodash/lodash.js', included: false },
       'test-main.js',
-      'index.js',
-      'index.test.js',
     ],
 
 
@@ -35,7 +37,10 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: [
+      'progress',
+      'html'
+    ],
 
 
     // web server port

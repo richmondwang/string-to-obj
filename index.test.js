@@ -3,24 +3,17 @@
  */
 
 'use strict';
-//
-// (function (root, factory) {
-//     /* istanbul ignore next */
-//     if(typeof define === "function" && define.amd) {
-//         define(['strToObj'], function(strToObj){
-//             return (root.strToObj = factory);
-//         });
-//     } else if(typeof module === "object" && module.exports) {
-//         module.exports = (root.strToObj = factory);
-//     } else {
-//         root.strToObj = factory;
-//     }
-// }(this, function(config) {
+(function (root, factory) {
+    if(typeof define === "function" && define.amd) {
+        define(['chai', 'index'], factory);
+    } else if(typeof module === "object" && module.exports) {
+        module.exports = factory(require('chai'), require('./index'));
+    } else {
+        root.test = factory(root.chai, root.strToObj);
+    }
+}(this, function(chai, strToObj) {
 
-// require(['require', './index'], function(require) {
-
-var assert = require('assert');
-var strToObj = require('./index');
+var assert = chai.assert;
 
     describe('With default config', function () {
 
@@ -1200,5 +1193,5 @@ var strToObj = require('./index');
         });
 
     });
-// }));
-// });
+
+}))

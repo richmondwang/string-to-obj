@@ -17,14 +17,15 @@ require.config({
   baseUrl: '/base',
 
   paths: {
-    'strToObj': './index'
+    lodash: './node_modules/lodash/lodash',
+    chai: './node_modules/chai/chai',
   },
 
-  // shim: {
-  //   lodash: {
-  //     exports: '_',
-  //   },
-  // },
+  shim: {
+    lodash: {
+      exports: '_',
+    },
+  },
 
   // dynamically load all test files
   deps: allTestFiles,
