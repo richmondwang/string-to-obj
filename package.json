@@ -15,7 +15,7 @@
     "sentry"
   ],
   "author": "Richmond Wang",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-istanbul": "^1.1.1",
