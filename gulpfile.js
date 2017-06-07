@@ -26,7 +26,8 @@ var reporters = [
     'json-summary',
     'json',
     'text-summary',
-    'text'
+    'text',
+    'lcovonly',
 ];
 
 gulp.task('unit-test', function() {

@@ -1,5 +1,7 @@
 # String-to-Obj
 
+[![Build Status](https://travis-ci.org/richmondwang/string-to-obj.svg?branch=master)](https://travis-ci.org/richmondwang/string-to-obj)
+
 > String to object properties parser for javascript
 
 This module takes a string of key-value/value and transforms it to an object.

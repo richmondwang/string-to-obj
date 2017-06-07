@@ -4,6 +4,9 @@ language: node_js
 node_js:
   - stable
 
+install:
+  - npm install -g codecov
+
 before_script:
   - git config user.email "richmond+ci@skyarch.net"
   - git config user.name "Travis CI"
@@ -13,6 +16,8 @@ before_script:
 
 script:
   - npm test
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - codecov
 
 deploy:
   provider: npm
