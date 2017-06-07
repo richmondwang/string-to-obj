@@ -21,5 +21,5 @@ deploy:
     secure: "ZY57DsNsE7eV6yNbrIleqELk+n27ucp2wmK0VlyFhbn4m2u6QnTMR0Hq22Y94l5o5eQEj+jBusZptt7NpvggmgpWaoquB7zN/vVC1ZRGenopEcUKHUPxj+2pVcpXA3IjrDHMIt/RlZzVm2Au8P1RY2LW5KjGFj2/2a7lmYMVolvsdKDZgsj6NKBWUQUfnPmmpFwCcMHT875anLFEvHb3QAwhZnftvRXY3j25XGvCEQhEhWGcGpuz9gcN73kTSu84zL5SqVDCcBixeUZ0MYLid1jKbRA6i2X86a+hBfI++/fCKkPIog9DMANrxQKamG2yQXGyEDymYxx7ZYa9QejjDCtfqM61f3axVxoIoIFV86Sory12MNj5kAhoFm3F3U//rJkxOsYd39yifnsYYs6mzQa6tvZd4+uiGY/1B8bslT9yMuHipXj2ihm6I58N2ZlHmcKcdQ6DQE/SfZcoChNK7RBwNl18VVNsjPaYQ7vNTNTrKFwC5HGG01sDu34XdwNtQHMKTDm/jr2ogu2gI/YNYNsqQsH7NQNjZBXfVJRnToIkAZlUw0lyZTiqzrcSx7JZWa1tdffu9czS/GPIfaX3TBfqtbBnNElG1/zAzQB/ueLGyj9u52z4qgOjwpESrhbX5aGfH2RF//Bxtj45MeveN8P4Lrs7aX/5RskXSDgbw1k="
   on:
     tags: true
-    repo: richmondwang/string-to-object
+    repo: richmondwang/string-to-obj
     all_branches: true
