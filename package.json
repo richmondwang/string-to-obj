@@ -1,6 +1,6 @@
 {
   "name": "string-to-obj",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Converts a `key:value` string to an object.",
   "main": "index.js",
   "scripts": {
