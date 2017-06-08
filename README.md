@@ -2,10 +2,8 @@
 
 [![Build Status](https://travis-ci.org/richmondwang/string-to-obj.svg?branch=master)](https://travis-ci.org/richmondwang/string-to-obj)
 [![codecov](https://codecov.io/gh/richmondwang/string-to-obj/branch/master/graph/badge.svg)](https://codecov.io/gh/richmondwang/string-to-obj)
-
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/string-to-obj)
+[![license](https://img.shields.io/github/license/richmondwang/string-to-obj.svg)](https://github.com/richmondwang/string-to-obj/blob/master/LICENSE.md)
+[![GitHub version](https://badge.fury.io/gh/richmondwang%2Fstring-to-obj.svg)](https://github.com/richmondwang/string-to-obj/releases)
 
 > String to object properties parser for javascript
 
