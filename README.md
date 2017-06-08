@@ -52,5 +52,3 @@ console.log(parser.parse('tags="db backup,systems" is=open is=active authors=joh
 
 // will still output the same...
 ```
-
-*No npm package yet! This project is still in progress of creating tests.*

@@ -41,9 +41,6 @@
                 match;
 
             while ((match = regex.exec(str)) !== null) {
-                // if (match.index === regex.lastIndex) {
-                //     regex.lastIndex++;
-                // }
                 if ((filter = match[1]) === undefined) {
                     filter = (config.blackhole === undefined || config.blackhole === true) ? 'blackhole' : config.blackhole;
                 }
@@ -63,13 +60,10 @@
                 result[filter] = result[filter].concat(newSet);
             }
             return result;
-        }
-        
+        };
         this.source = function (config) {
             return config;
         }(config)
     }
-
     return StringToObj;
-
-}))
+}));
